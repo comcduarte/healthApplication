@@ -21,12 +21,23 @@
 		"zendframework/zend-i18n" : "*",
 		"zendframework/zend-db" : "*",
 		"zendframework/zend-form" : "2.12.0",
-		"zendframework/zend-paginator" : "*"
+		"zendframework/zend-paginator" : "*",
+		"zendframework/zend-math" : "*",
+		"zendframework/zend-authentication" : "*",
+		"zendframework/zend-crypt" : "*",
+		"zendframework/zend-session" : "*",
+		"zendframework/zend-permissions-rbac" : "*",
+		"zendframework/zend-permissions-acl" : "*"
 	},
 	"autoload" : {
 		"psr-4" : {
 			"Application\\" : "module/Application/src/",
-			"Midnet\\" : "module/Midnet/src/"
+			"Midnet\\" : "module/Midnet/src/",
+			"Certificate\\" : "module/Certificate/src",
+			"Acl\\" : "module/Acl/src",
+			"Annotation\\" : "module/Annotation/src",
+			"Report\\" : "module/Report/src",
+			"User\\" : "module/User/src"
 		}
 	},
 	"autoload-dev" : {

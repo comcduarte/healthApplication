@@ -1,0 +1,71 @@
+<style type="text/css" media="screen, print">
+    @page
+    {
+        size: auto;
+        margin: 0px;
+    }
+    
+    .card {
+        width: 450px; height: 1200px; font-size: 12px;
+        margin: 25px 15px 25px 40px;
+    }
+    
+    .rotate {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        position: relative; top: 1000px; left: -75px;
+    }
+</style>
+<?php 
+$data = $this->data[0];
+
+$date = new \DateTime($data['DOB'],new \DateTimeZone('EDT'));
+$DOB = $date->format('F d, Y');
+
+$date = new \DateTime($data['DOR'],new \DateTimeZone('EDT'));
+$DOR = $date->format('m/d/Y');
+
+$date = new \DateTime($data['DOI'],new \DateTimeZone('EDT'));
+$DOI = $date->format('m/d/Y');
+
+?>
+<div class="row card border-0">
+    <div class="border-0">
+    	<div class="rotate">
+    		<div class="row">
+    			<div class="col-4"></div>
+				<div class="col-3">Registration No.:</div>
+				<div class="col-3 border-bottom border-dark"><?php echo $data['SFN'];?></div>
+    		</div>
+    		<div class="row">
+    			<div class="col-3">Name:</div>
+    			<div class="col-7 border-bottom border-dark"><?php echo strtoupper($data['NAME']);?></div>
+    		</div>
+    		<div class="row">
+    			<div class="col-3">Birth Date:</div>
+    			<div class="col-4 border-bottom border-dark"><?php echo strtoupper($DOB);?></div>
+    			<div class="col-2">Sex:</div>
+    			<div class="col-1 border-bottom border-dark"><?php echo strtoupper($data['SEX']);?></div>
+    		</div>
+    		<div class="row">
+    			<div class="col-3">Birth Place:</div>
+    			<div class="col-7 border-bottom border-dark"><?php echo strtoupper($data['BIRTHPLACE']);?></div>
+    		</div>
+    		<div class="row">
+    			<div class="col-3">Reg. Date:</div>
+    			<div class="col-7 border-bottom border-dark"><?php echo $DOR;?></div>
+    		</div>
+    		<div class="row">
+    			<div class="col-3">Date Issued:</div>
+    			<div class="col-7 border-bottom border-dark"><?php echo $DOI;?></div>
+    		</div>
+    		<div class="row">
+    			<div class="col-3">Place Issued:</div>
+    			<div class="col-7 border-bottom border-dark">MIDDLETOWN, CT</div>
+    		</div>
+    	</div>
+	</div>
+</div>
