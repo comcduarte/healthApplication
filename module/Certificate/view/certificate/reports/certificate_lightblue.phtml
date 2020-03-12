@@ -10,13 +10,28 @@
         margin: 25px 15px 25px 40px;
     }
     
+    .cert {
+        width: 450px; height: 200px; font-size: 12px;
+    }
+    
     .rotate {
         -webkit-transform: rotate(90deg);
         -moz-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         transform: rotate(90deg);
-        position: relative; top: 1000px; left: -100px;
+        position: absolute; top: 1005px; left: -60px;
+        overflow: hidden;
+    }
+    
+    .rotate-ccw {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        position: absolute; top: 170px; left: 250px;
+        overflow: hidden;
     }
 </style>
 <?php 
@@ -32,40 +47,48 @@ $date = new \DateTime($data['DOI'],new \DateTimeZone('EDT'));
 $DOI = $date->format('m/d/Y');
 
 ?>
-<div class="row card border-0">
-    <div class="border-0">
-    	<div class="rotate">
-    		<div class="row">
-    			<div class="col-4"></div>
-				<div class="col-3">Registration No.:</div>
-				<div class="col-3 border-bottom border-dark"><?php echo $data['SFN'];?></div>
+<!-- <div class="container border border-danger"> -->
+<!-- 	<div class="row border border-primary"> -->
+		<div class="rotate-ccw cert">
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-6 text-right">Registration No.:</div>
+				<div class="col-4 border-bottom border-dark"><?php echo $data['SFN'];?></div>
     		</div>
     		<div class="row">
+    			<div class="col-1"></div>
     			<div class="col-3">Name:</div>
-    			<div class="col-7 border-bottom border-dark"><?php echo strtoupper($data['NAME']);?></div>
+    			<div class="col-8 border-bottom border-dark"><?php echo strtoupper($data['NAME']);?></div>
     		</div>
     		<div class="row">
-    			<div class="col-3">Birth Date:</div>
+    			<div class="col-1"></div>
+    			<div class="col-3">Date of Birth:</div>
     			<div class="col-4 border-bottom border-dark"><?php echo strtoupper($DOB);?></div>
     			<div class="col-2">Sex:</div>
-    			<div class="col-1 border-bottom border-dark"><?php echo strtoupper($data['SEX']);?></div>
+    			<div class="col-2 border-bottom border-dark"><?php echo strtoupper($data['SEX']);?></div>
     		</div>
     		<div class="row">
-    			<div class="col-3">Birth Place:</div>
-    			<div class="col-7 border-bottom border-dark"><?php echo strtoupper($data['BIRTHPLACE']);?></div>
+    			<div class="col-1"></div>
+    			<div class="col-3">Place of Birth:</div>
+    			<div class="col-8 border-bottom border-dark">MIDDLETOWN, CT</div>
     		</div>
     		<div class="row">
+    			<div class="col-1"></div>
     			<div class="col-3">Reg. Date:</div>
-    			<div class="col-7 border-bottom border-dark"><?php echo $DOR;?></div>
+    			<div class="col-2 border-bottom border-dark"><?php echo $DOR;?></div>
+    			<div class="col-3 text-right">Date Issued:</div>
+    			<div class="col-3 border-bottom border-dark"><?php echo $DOI;?></div>
     		</div>
-    		<div class="row">
+    		<!-- <div class="row">
+    			<div class="col-1"></div>
     			<div class="col-3">Date Issued:</div>
-    			<div class="col-7 border-bottom border-dark"><?php echo $DOI;?></div>
-    		</div>
+    			<div class="col-8 border-bottom border-dark"><?php echo $DOI;?></div>
+    		</div>-->
     		<div class="row">
+    			<div class="col-1"></div>
     			<div class="col-3">Place Issued:</div>
-    			<div class="col-7 border-bottom border-dark">MIDDLETOWN, CT</div>
+    			<div class="col-8 border-bottom border-dark">MIDDLETOWN, CT</div>
     		</div>
-    	</div>
-	</div>
-</div>
+		</div>
+<!-- 	</div> -->
+<!-- </div> -->
