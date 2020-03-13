@@ -3,6 +3,7 @@ namespace Certificate\Form;
 
 use Midnet\Form\AbstractBaseForm;
 use Zend\Form\Element\Date;
+use Zend\Form\Element\Hidden;
 use Zend\Form\Element\Text;
 
 class CertificateForm extends AbstractBaseForm
@@ -39,11 +40,10 @@ class CertificateForm extends AbstractBaseForm
         
         $this->add([
             'name' => 'BIRTHPLACE',
-            'type' => Text::class,
+            'type' => Hidden::class,
             'attributes' => [
                 'id' => 'BIRTHPLACE',
                 'class' => 'form-control',
-                'required' => 'true',
             ],
             'options' => [
                 'label' => 'Place of Birth',
@@ -98,7 +98,7 @@ class CertificateForm extends AbstractBaseForm
                 'required' => 'true',
             ],
             'options' => [
-                'label' => 'SFN',
+                'label' => 'Registration No.',
             ],
         ],['priority' => 100]);
     }
